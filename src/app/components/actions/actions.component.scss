@@ -1,0 +1,14 @@
+.div-actions {
+    border: 1px solid #DEDEDE;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+        width: 4px;
+    }
+}

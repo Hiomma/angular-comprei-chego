@@ -1,0 +1,6 @@
+<div style="position: relative;" fxLayout="column">
+    <label>{{ds_Label}}</label>
+    <select [formControl]="control">
+        <option *ngFor="let item of objArrayItens" [value]="item[ds_Description]">{{item[ds_Description]}}</option>
+    </select>
+</div>

@@ -1,0 +1,47 @@
+<app-bar></app-bar>
+
+<div fxLayout="row" fxLayoutGap="8px" class="div-images">
+    <div class="div-main-image">
+        <img src="assets/images/imagem-1.png">
+    </div>
+
+    <div fxLayout="column">
+        <div class="div-image">
+            <img src="assets/images/imagem-2.png">
+        </div>
+
+        <div class="div-image" style="margin-top: 8px">
+            <img src="assets/images/imagem-3.png">
+        </div>
+    </div>
+</div>
+
+<div class="div-sections" fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div fxLayout="column">
+        <div class="div-section-image">
+            <img src="assets/images/imagem-3.png">
+        </div>
+
+        <div class="div-section-name">
+            Moda Feminina
+        </div>
+    </div>
+    <div class="div-learn-more">
+        Ver mais
+    </div>
+</div>
+
+<div class="div-offers">
+    <div fxLayout="row">
+        <h2>
+            Ofertas do dia
+        </h2>
+
+        <span>Ver todas</span>
+    </div>
+
+    <div>
+        <cc-product-card (click)="Open_Product()">
+        </cc-product-card>
+    </div>
+</div>

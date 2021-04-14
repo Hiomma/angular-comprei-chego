@@ -1,0 +1,18 @@
+label {
+    text-align: left;
+}
+
+input {
+    width: calc(100% - 24px);
+    border: none;
+    border-radius: 5px;
+    height: 44px;
+    padding-left: 24px;
+    font-family: Montserrat;
+}
+
+.img-search {
+    position: absolute;
+    right: 24px;
+    top: calc(50% - 10px);
+}

@@ -1,0 +1,72 @@
+<app-bar></app-bar>
+
+<div class="div-header" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="5" style="justify-content: center; display: flex;">
+        <cc-checkbox>
+        </cc-checkbox>
+    </div>
+
+    <span fxFlex="40">Produtos</span>
+
+    <span fxFlex="13" style="text-align: center;">Preço unitário</span>
+    <span fxFlex="19" style="text-align: center;">Quantidade</span>
+    <span fxFlex="13" style="text-align: center;">Preço total</span>
+    <span fxFlex="10" style="text-align: center;">Ações</span>
+</div>
+
+<div class="div-products">
+    <div>
+        <div class="div-company" fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="5" style="justify-content: center; display: flex;">
+                <cc-checkbox>
+                </cc-checkbox>
+            </div>
+
+            <span fxFlex="95">Sipollati</span>
+        </div>
+
+        <div class="div-product" fxLayout="row" fxLayoutAlign="center center">
+
+            <div fxFlex="5" style="justify-content: center; display: flex;">
+                <cc-checkbox>
+                </cc-checkbox>
+            </div>
+
+            <div fxFlex="40" fxLayout="row" fxLayoutAlign="initial center">
+                <img src="assets/images/cart-1.png">
+
+                <span style="margin-left: 16px;">PC Gamer 8GB de RAM</span>
+            </div>
+
+            <span fxFlex="13" style="text-align: center;">R$ 2.500,00</span>
+
+            <div fxFlex="19" style="justify-content: center; display: flex;">
+                <cc-quantity-selector>
+                </cc-quantity-selector>
+            </div>
+
+            <span fxFlex="13" style="text-align: center;">R$ 2.500,00</span>
+
+            <div fxFlex="10" style="justify-content: center; display: flex;">
+                <cc-actions></cc-actions>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="div-footer" fxLayout="row" fxLayoutAlign="center center">
+    <span class="span-selected" fxFlex="25">5 itens selecionados</span>
+
+    <div fxFlex="25">
+        <cc-select ds_Label="Entregar em:"></cc-select>
+    </div>
+
+    <div fxFlex="25">
+        <span class="span-value">R$ 55.500,00</span>
+    </div>
+
+    <div fxFlex="25">
+        <button class="button-buy">Comprar</button>
+    </div>
+</div>

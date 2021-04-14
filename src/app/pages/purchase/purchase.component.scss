@@ -1,0 +1,98 @@
+.div-content {
+    width: 1140px;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.div-form {
+    width: 950px;
+    margin-left: 16px;
+
+    .div-title {
+        height: 60px;
+        width: 100%;
+        line-height: 60px;
+        font-weight: bold;
+        font-size: 20px;
+        background: white;
+        border-radius: 5px;
+        color: var(--preto);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        span {
+            padding-left: 16px;
+        }
+    }
+
+    .div-purchase {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin-top: 16px;
+        background: white;
+        width: 100%;
+
+        .div-item-purchase {
+            padding: 16px 0;
+            padding-left: 16px;
+            text-align: center;
+        }
+
+        .div-product-name {
+            text-align: initial;
+            padding-left: 16px;
+
+            span {
+                font-size: 22px;
+            }
+
+            p {
+                margin: 0px;
+                font-size: 14px;
+            }
+        }
+
+        .div-header-purchase {
+            position: relative;
+            height: 48px;
+            border-bottom: 1px solid var(--cinza-claro);
+            line-height: 48px;
+            padding-left: 16px;
+        }
+
+        .div-price {
+            color: var(--laranja);
+            font-weight: bold;
+            font-size: 22px;
+
+        }
+
+        .div-purchase-date {
+            position: absolute;
+            right: 16px;
+            top: calc(50% - 20px);
+            font-size: 14px;
+        }
+
+        .div-footer-purchase {
+            position: relative;
+            height: 48px;
+            line-height: 48px;
+            border-top: 1px solid var(--cinza-claro);
+        }
+
+        .span-total {
+            position: absolute;
+            right: 16px;
+            top: calc(50% - 24px);
+            font-size: 14px;
+        }
+
+        .b-value {
+            font-weight: bold;
+            color: var(--laranja);
+            font-size: 22px;
+            position: relative;
+            top: 2px;
+        }
+    }
+}

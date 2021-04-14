@@ -1,0 +1,123 @@
+.div-principal {
+    width: 1140px;
+    margin: 0 auto;
+    margin-top: 16px;
+
+    h2 {
+        margin: 0;
+    }
+
+    .p-sold {
+        color: var(--cinza-escuro);
+        font-size: 18px;
+        margin: 0;
+        margin-top: 8px;
+    }
+
+    .p-value {
+        color: var(--laranja);
+        font-weight: bold;
+        font-size: 26px;
+        margin: 0;
+        margin-top: 8px;
+    }
+
+    .div-mall {
+        img {
+            height: 98px;
+            width: 114px;
+        }
+
+        span {
+            font-size: 16px;
+            color: var(--preto);
+            margin-top: 8px;
+        }
+    }
+
+    .div-variations {
+        margin-top: 32px;
+
+        .span-variations {
+            font-size: 18px;
+            line-height: 36px;
+        }
+
+        .button-variation {
+            height: 36px;
+            width: 134px;
+            border-radius: 5px;
+            color: white;
+            background: var(--cinza-escuro);
+            border: 0;
+            font-size: 18px;
+
+            &.selected {
+                background: var(--laranja);
+            }
+        }
+    }
+
+    .div-quantity {
+        margin-top: 32px;
+
+        .span-quantity {
+            font-size: 18px;
+            line-height: 36px;
+        }
+    }
+
+    .div-buttons {
+        margin-top: 32px;
+
+        .button-add-cart {
+            border: 1px solid var(--laranja);
+            color: var(--laranja);
+            font-size: 18px;
+            height: 60px;
+            width: 273px;
+            border-radius: 5px;
+        }
+
+        .button-buy-now {
+            background: var(--laranja);
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            border: none;
+            height: 60px;
+            width: 273px;
+        }
+    }
+
+
+}
+
+.div-description {
+    width: 1140px;
+    margin: 0 auto;
+
+    .div-separator {
+        margin: 0 auto;
+        width: 776px;
+        color: var(--cinza-escuro);
+    }
+
+    .h2-title {
+        color: var(--preto);
+        margin-bottom: 0px;
+    }
+
+    .div-bar {
+        border: 2px solid var(--azul-escuro);
+        width: 39px;
+        margin-left: 2px;
+        border-radius: 5px;
+    }
+
+    .div-text {
+        color: var(--preto);
+        font-size: 16px;
+        margin-top: 16px;
+    }
+}
