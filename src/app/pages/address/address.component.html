@@ -11,20 +11,22 @@
             <h3 class="h3-title">Meus endereços</h3>
 
 
-            <div class="div-address" fxLayout="row" fxLayoutAlign="center center">
+            <div class="div-address" fxLayout="row" fxLayoutAlign="center center"
+                *ngFor="let address of objArrayAddresses">
                 <div fxFlex="60px" style="justify-content: center; display: flex;">
                     <cc-radio-button></cc-radio-button>
                 </div>
 
-                <span fxFlex="20">Minha casa</span>
+                <span fxFlex="20">{{address.nm_Address}}</span>
 
                 <div fxLayout="row" fxLayoutGap="16px" fxFlex="10">
                     <img src="assets/icons/edit.svg">
                     <img src="assets/icons/trash.svg">
                 </div>
 
-                <span fxFlex="70" class="span-endereco">Rua Perenino Marino, Nº 30, LBC - Cachoeiro de Itapemirim -
-                    ES</span>
+                <span fxFlex="70" class="span-endereco">{{address.nm_Street}}, Nº {{address.nr_Number}},
+                    {{address.nm_District}} - {{address.nm_City}} -
+                    {{address.nm_UF}}</span>
 
                 <div class="div-border"></div>
             </div>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 import { SearchbarModule } from '../searchbar/searchbar.module';
 import { AppBarComponent } from './app-bar.component';
 
@@ -13,7 +14,8 @@ import { AppBarComponent } from './app-bar.component';
     imports: [
         CommonModule,
         FlexLayoutModule,
-        SearchbarModule
+        SearchbarModule,
+        RouterModule,
     ],
     exports: [
         AppBarComponent

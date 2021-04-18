@@ -1,10 +1,27 @@
-.div-principal {
+.div-form {
+    background: white;
+    border-radius: 5px;
+    padding: 16px;
     width: 1140px;
     margin: 0 auto;
     margin-top: 16px;
+}
 
+.div-principal {
     h2 {
         margin: 0;
+    }
+
+    .div-main-image {
+        width: 480px;
+        height: 480px;
+        object-fit: cover;
+    }
+
+    .div-secondary-image {
+        width: 102px;
+        height: 102px;
+        object-fit: cover;
     }
 
     .p-sold {
@@ -26,6 +43,7 @@
         img {
             height: 98px;
             width: 114px;
+            object-fit: cover;
         }
 
         span {
@@ -73,6 +91,7 @@
         .button-add-cart {
             border: 1px solid var(--laranja);
             color: var(--laranja);
+            background: transparent;
             font-size: 18px;
             height: 60px;
             width: 273px;
@@ -99,6 +118,7 @@
 
     .div-separator {
         margin: 0 auto;
+        margin-top: 24px;
         width: 776px;
         color: var(--cinza-escuro);
     }
@@ -119,5 +139,7 @@
         color: var(--preto);
         font-size: 16px;
         margin-top: 16px;
+        white-space: pre-line;
+        text-align: justify;
     }
 }

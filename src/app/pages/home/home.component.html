@@ -17,13 +17,13 @@
 </div>
 
 <div class="div-sections" fxLayout="row" fxLayoutAlign="space-evenly center">
-    <div fxLayout="column">
+    <div fxLayout="column" *ngFor="let section of objArraySections">
         <div class="div-section-image">
-            <img src="assets/images/imagem-3.png">
+            <img [src]="section.ds_Image">
         </div>
 
         <div class="div-section-name">
-            Moda Feminina
+            {{section.nm_Section}}
         </div>
     </div>
     <div class="div-learn-more">
@@ -37,11 +37,12 @@
             Ofertas do dia
         </h2>
 
-        <span>Ver todas</span>
+        <!-- <span>Ver todas</span> -->
     </div>
 
-    <div>
-        <cc-product-card (click)="Open_Product()">
+    <div fxLayout="row" fxLayoutGap="12px">
+        <cc-product-card (click)="Open_Product(product)" *ngFor="let product of objArrayProducts"
+            [objProduct]="product">
         </cc-product-card>
     </div>
 </div>

@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import localePt from '@angular/common/locales/pt';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GraphQLModule } from './graphql.module';
 import { AddressModule } from './pages/address/address.module';
 import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
 import { ProductModule } from './pages/product/product.module';
 import { PurchaseModule } from './pages/purchase/purchase.module';
 import { SearchModule } from './pages/search/search.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
+import { ProductResolver } from './resolvers/product.resolver';
 
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
     declarations: [
@@ -30,7 +34,13 @@ import { HttpClientModule } from '@angular/common/http';
         GraphQLModule,
         HttpClientModule
     ],
-    providers: [],
+    providers: [
+        ProductResolver,
+        {
+            provide: LOCALE_ID,
+            useValue: 'pt'
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

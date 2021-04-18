@@ -1,80 +1,72 @@
 <app-bar></app-bar>
 
-<div class="div-principal" fxLayout="row" fxLayoutGap="32px">
-    <div>
+<div class="div-form">
+    <div class="div-principal" fxLayout="row" fxLayoutGap="32px">
         <div>
-            <img src="assets/images/product-1.png">
-        </div>
-
-        <div fxLayout="row" fxLayoutGap="8px">
             <div>
-                <img src="assets/images/product-2.png">
+                <img class="div-main-image" [src]="ds_Main_Image">
             </div>
-            <div>
-                <img src="assets/images/product-3.png">
-            </div>
-            <div>
-                <img src="assets/images/product-4.png">
-            </div>
-            <div>
-                <img src="assets/images/product-5.png">
-            </div>
-        </div>
-
-    </div>
-
-    <div>
-        <div fxLayout="row">
-            <div fxFlex="calc(100% - 200px)">
-                <h2>Computador Gamer 8GB Ram</h2>
-                <p class="p-sold">6 vendidos</p>
-                <p class="p-value"> R$ 2.500,00</p>
-            </div>
-
-            <div fxLayout="column" fxLayoutAlign="center end" fxFlex="200px" class="div-mall">
-                <img src="assets/images/product-6.png">
-                <span>Vendido por: Sipollati</span>
-            </div>
-        </div>
-
-        <div fxLayout="row" class="div-variations">
-            <span fxFlex="130px" class="span-variations">Variações</span>
 
             <div fxLayout="row" fxLayoutGap="8px">
-                <button class="button-variation selected">Gamer 8GB</button>
-                <button class="button-variation">Branco 8GB</button>
+                <div *ngFor="let photo of objArraySecundaryPhotos">
+                    <img class="div-secondary-image" [src]="photo.ds_Image">
+                </div>
+            </div>
+
+        </div>
+
+        <div style="width: 100%;">
+            <div fxLayout="row">
+                <div fxFlex="80">
+                    <h2>{{objProduct.nm_Product}}</h2>
+                    <p class="p-sold">{{objProduct.nr_Quantity}} vendidos</p>
+                    <p class="p-value">{{objProduct.vl_Product | currency:'BRL':'symbol-narrow':'1.2-2'}}</p>
+                </div>
+
+                <div fxLayout="column" fxLayoutAlign="center end" fxFlex="20" class="div-mall">
+                    <img [src]="objProduct.user.ds_Image">
+                    <span>{{objProduct.user.nm_Seller_Name}}</span>
+                </div>
+            </div>
+
+            <!-- <div fxLayout="row" class="div-variations">
+                <span fxFlex="130px" class="span-variations">Variações</span>
+    
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <button class="button-variation selected">Gamer 8GB</button>
+                    <button class="button-variation">Branco 8GB</button>
+                </div>
+            </div> -->
+
+            <div fxLayout="row" class="div-quantity">
+                <span fxFlex="130px" class="span-quantity">Quantidade</span>
+
+                <cc-quantity-selector>
+                </cc-quantity-selector>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="8px" class="div-buttons">
+                <button class="button-add-cart">Adicionar ao carrinho</button>
+                <button class="button-buy-now">Comprar agora</button>
             </div>
         </div>
 
-        <div fxLayout="row" class="div-quantity">
-            <span fxFlex="130px" class="span-quantity">Quantidade</span>
-
-            <cc-quantity-selector>
-            </cc-quantity-selector>
-        </div>
-
-        <div fxLayout="row" fxLayoutGap="8px" class="div-buttons">
-            <button class="button-add-cart">Adicionar ao carrinho</button>
-            <button class="button-buy-now">Comprar agora</button>
-        </div>
-    </div>
-</div>
-
-<div class="div-description">
-    <div class="div-separator">
-        <hr>
     </div>
 
-    <div>
+    <div class="div-description">
+        <div class="div-separator">
+            <hr>
+        </div>
+
         <div>
-            <h2 class="h2-title">Detalhes do produto</h2>
-            <div class="div-bar"></div>
-        </div>
+            <div>
+                <h2 class="h2-title">Detalhes do produto</h2>
+                <div class="div-bar"></div>
+            </div>
 
-        <div class="div-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu arcu lacus quis tempor sed orci eget vel
-            dolor. A, fringilla amet blandit justo. Vestibulum odio ultricies sit ac suspendisse non turpis quisque.
-            Turpis fames a, etiam ipsum, cursus nisl.
+            <div class="div-text">
+                {{objProduct.ds_Detail}}
+            </div>
         </div>
     </div>
 </div>

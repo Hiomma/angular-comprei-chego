@@ -6,13 +6,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
 import { PurchaseComponent } from './pages/purchase/purchase.component';
 import { SearchComponent } from './pages/search/search.component';
+import { ProductResolver } from './resolvers/product.resolver';
 
 const routes: Routes = [
     {
         path: "", component: HomeComponent
     },
     {
-        path: "product", component: ProductComponent
+        path: "product/:cd_Product/:nm_Product",
+        component: ProductComponent,
+        resolve: { objProduct: ProductResolver }
     },
     {
         path: "search", component: SearchComponent

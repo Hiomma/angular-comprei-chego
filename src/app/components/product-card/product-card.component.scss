@@ -9,6 +9,9 @@
         img {
             width: 180px;
             height: 210px;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
         }
     }
 
@@ -32,6 +35,11 @@
     .div-name {
         margin-top: 4px;
         font-size: 12px;
+        width: 174px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 600;
     }
 
     .div-parcel {

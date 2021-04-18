@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Products } from 'src/app/models/products/products.model';
 
 @Component({
-  selector: 'cc-product-card',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+    selector: 'cc-product-card',
+    templateUrl: './product-card.component.html',
+    styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
 
-  constructor() { }
+    /** @description Product that you want to show */
+    @Input() objProduct: Products
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
 
 }
