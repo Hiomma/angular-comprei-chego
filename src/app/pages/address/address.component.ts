@@ -25,7 +25,21 @@ export class AddressComponent implements OnInit {
         setTimeout(async () => this.objArrayAddresses = await this.compreiFacade.Get_Addresses(1))
     }
 
-    Open_Modal(objAddress?: any) {
-        this.dialogService.open(MyAddressComponent, { width: "800px" })
+    async Open_Modal(objAddress?: any) {
+        const modal = this.dialogService.open(MyAddressComponent, { width: "800px" })
+
+        const response = await modal.afterClosed().toPromise();
+
+        if (objAddress) {
+
+        } else {
+            response.cd_User = 1
+            response.b_Main = false
+            delete (response.cd_Address)
+            const objInsert = await this.compreiFacade.Set_Insert_Addresses(response)
+
+
+            this.objArrayAddresses.push(objInsert)
+        }
     }
 }

@@ -7,35 +7,35 @@
 <div class="div-form">
     <div fxLayout="row" fxLayoutGap="8px">
         <div fxFlex="45" fx>
-            <cc-input ds_Label="CEP"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nr_Cep')" ds_Label="CEP"></cc-input>
         </div>
 
         <div fxFlex="45">
-            <cc-input ds_Label="Rua"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nm_Street')" ds_Label="Rua"></cc-input>
         </div>
 
         <div fxFlex="10">
-            <cc-input ds_Label="Número"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nr_Number')" ds_Label="Número"></cc-input>
         </div>
     </div>
 
     <div fxLayout="row" fxLayoutGap="8px">
         <div fxFlex="45">
-            <cc-input ds_Label="Bairro"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nm_District')" ds_Label="Bairro"></cc-input>
         </div>
 
         <div fxFlex="45">
-            <cc-input ds_Label="Cidade"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nm_City')" ds_Label="Cidade"></cc-input>
         </div>
 
         <div fxFlex="10">
-            <cc-input ds_Label="UF"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nm_UF')" ds_Label="UF"></cc-input>
         </div>
     </div>
 
     <div fxLayout="row" fxLayoutGap="8px">
         <div fxFlex="80">
-            <cc-input ds_Label="Nome para o endereço"></cc-input>
+            <cc-input [control]="$any(objFormGroup).get('nm_Address')" ds_Label="Nome para o endereço"></cc-input>
         </div>
 
         <div fxFlex="20" fxLayout="row" fxLayoutAlign="center center">
@@ -45,7 +45,7 @@
 
 
     <div class="div-buttons" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="center center">
-        <button class="button-back">Voltar</button>
-        <button class="button-confirm">Confirmar</button>
+        <button class="button-back" (click)="Back()">Voltar</button>
+        <button class="button-confirm" (click)="Save()">Confirmar</button>
     </div>
 </div>

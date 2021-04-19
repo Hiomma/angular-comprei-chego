@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
     @Input() ds_Placeholder: string = ""
 
     /** @description Form Control to control the input */
-    @Input() control: FormControl = new FormControl();
+    @Input() control: FormControl | null = new FormControl();
 
     constructor() { }
 

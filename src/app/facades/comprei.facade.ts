@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Addresses } from '../models/addresses/addresses.model';
 import { AddressRepository } from '../repositories/address.repository';
 import { ProductRepository } from '../repositories/product.repository';
 import { SectionRepository } from '../repositories/section.repository';
@@ -23,4 +24,5 @@ export class CompreiFacade {
 
 
     Get_Addresses = (cd_User: number) => this.addressRepository.Get_Addresses(cd_User)
+    Set_Insert_Addresses = (object: Addresses) => this.addressRepository.Set_Insert_Addresses(object)
 }
