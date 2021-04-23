@@ -25,21 +25,37 @@ export class AddressComponent implements OnInit {
         setTimeout(async () => this.objArrayAddresses = await this.compreiFacade.Get_Addresses(1))
     }
 
-    async Open_Modal(objAddress?: any) {
-        const modal = this.dialogService.open(MyAddressComponent, { width: "800px" })
+    async Open_Modal(objAddress?: Addresses) {
+        const modal = this.dialogService.open(MyAddressComponent, { data: { objAddress }, width: "800px" })
 
         const response = await modal.afterClosed().toPromise();
 
-        if (objAddress) {
+        if (response) {
+            if (objAddress) {
+                const objUpdate = await this.compreiFacade.Set_Update_Addresses(response)
 
-        } else {
-            response.cd_User = 1
-            response.b_Main = false
-            delete (response.cd_Address)
-            const objInsert = await this.compreiFacade.Set_Insert_Addresses(response)
+                const index = this.objArrayAddresses.findIndex(element => element.cd_Address == response.cd_Address)
+
+                this.objArrayAddresses[index] = objUpdate
+            } else {
+                response.cd_User = 1
+                response.b_Main = false
+                delete (response.cd_Address)
+                const objInsert = await this.compreiFacade.Set_Insert_Addresses(response)
 
 
-            this.objArrayAddresses.push(objInsert)
+                this.objArrayAddresses.push(objInsert)
+            }
+        }
+    }
+
+    async Delete(objAddress: Addresses) {
+        await this.compreiFacade.Set_Delete_Addresses(objAddress.cd_Address)
+
+        const index = this.objArrayAddresses.findIndex(element => element.cd_Address == objAddress.cd_Address)
+
+        if (index >= 0) {
+            this.objArrayAddresses.splice(index, 1)
         }
     }
 }

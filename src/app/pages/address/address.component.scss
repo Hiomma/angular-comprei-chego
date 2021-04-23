@@ -21,6 +21,10 @@
         position: relative;
         height: 52px;
 
+        .img-action {
+            cursor: pointer;
+        }
+
         .div-border {
             position: absolute;
             bottom: 0;

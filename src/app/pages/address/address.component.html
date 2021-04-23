@@ -20,8 +20,8 @@
                 <span fxFlex="20">{{address.nm_Address}}</span>
 
                 <div fxLayout="row" fxLayoutGap="16px" fxFlex="10">
-                    <img src="assets/icons/edit.svg">
-                    <img src="assets/icons/trash.svg">
+                    <img (click)="Open_Modal(address)" class="img-action" src="assets/icons/edit.svg">
+                    <img (click)="Delete(address)" class="img-action" src="assets/icons/trash.svg">
                 </div>
 
                 <span fxFlex="70" class="span-endereco">{{address.nm_Street}}, Nº {{address.nr_Number}},

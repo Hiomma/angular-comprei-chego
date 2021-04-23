@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CompreiFacade } from 'src/app/facades/comprei.facade';
 import { ProductImages } from 'src/app/models/products/product-images.model';
 import { Products } from 'src/app/models/products/products.model';
 
@@ -21,6 +22,7 @@ export class ProductComponent implements OnInit {
 
     constructor(private router: Router,
         private route: ActivatedRoute,
+        private compreiFacade: CompreiFacade,
     ) { }
 
     ngOnInit(): void {
@@ -28,5 +30,9 @@ export class ProductComponent implements OnInit {
 
         this.ds_Main_Image = this.objProduct.product_Images.find(element => element.b_Main)?.ds_Image ?? ''
         this.objArraySecundaryPhotos = this.objProduct.product_Images.filter(element => !element.b_Main);
+    }
+
+    async Add_Product() {
+        await this.compreiFacade.Set_Insert_Products(this.objProduct)
     }
 }

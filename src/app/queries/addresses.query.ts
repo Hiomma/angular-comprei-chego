@@ -20,7 +20,7 @@ export const objAddressesQuery = {
     `
 }
 
-export const objAddressesAdd = {
+export const objInsertAddresses = {
     header: [
         {
             field: "$object",
@@ -38,6 +38,46 @@ export const objAddressesAdd = {
         nm_UF
         nr_Cep
         nr_Number
+    }
+    `
+}
+
+export const objUpdateAddresses = {
+    header: [
+        {
+            field: "$set",
+            type: "addresses_set_input"
+        },
+        {
+            field: "$cd_Address",
+            type: "Int!"
+        }
+    ],
+    query: `
+    update_addresses_by_pk(pk_columns: {cd_Address: $cd_Address}, _set: $set) {
+        b_Main
+        cd_Address
+        nm_Address
+        nm_City
+        nm_District
+        nm_Street
+        nm_UF
+        nr_Cep
+        nr_Number
+      }
+    `
+}
+
+export const objDeleteAddresses = {
+    header: [
+        {
+            field: "$cd_Address",
+            type: "Int!"
+        }
+    ],
+    query: `
+    delete_addresses_by_pk(cd_Address: $cd_Address) {
+        cd_Address
     }
     `
 }
