@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Carts } from '../models/carts/carts.model';
-import { objCartsQuery, objInsertCarts, objUpdateCarts, objDeleteCarts } from '../queries/carts.query';
+import { objCartsQuery, objDeleteCarts, objInsertCarts, objUpdateCarts } from '../queries/carts.query';
 import { ApiService } from '../services/api.service';
 import { Copy } from '../utils/utils';
 
@@ -13,19 +13,21 @@ export class CartRepository {
     constructor(private apiService: ApiService) {
     }
 
-    async Get_Carts(cd_Cart: number) {
-        const response = await this.apiService.Get_Query([objCartsQuery], { cd_Cart })
+    async Get_Carts(cd_User: number) {
+        const response = await this.apiService.Get_Query([objCartsQuery], { cd_User })
 
         return response.carts
     }
 
     async Set_Insert_Carts(object: Carts) {
+        object.cd_User = 1
+
         const response = await this.apiService.Get_Mutation([objInsertCarts], { object })
 
         return response.insert_carts_one
     }
 
-    
+
     async Set_Update_Carts(object: Carts) {
         let objCopy = Copy(object)
 

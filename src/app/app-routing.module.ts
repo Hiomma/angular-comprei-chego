@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
 import { PurchaseComponent } from './pages/purchase/purchase.component';
 import { SearchComponent } from './pages/search/search.component';
+import { CartResolver } from './resolvers/cart.resolver';
 import { ProductResolver } from './resolvers/product.resolver';
 
 const routes: Routes = [
@@ -21,7 +22,9 @@ const routes: Routes = [
         path: "search", component: SearchComponent
     },
     {
-        path: "cart", component: CartComponent
+        path: "cart",
+        component: CartComponent,
+        resolve: { objCart: CartResolver }
     },
     {
         path: "address", component: AddressComponent

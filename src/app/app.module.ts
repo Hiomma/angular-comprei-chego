@@ -13,6 +13,7 @@ import { HomeModule } from './pages/home/home.module';
 import { ProductModule } from './pages/product/product.module';
 import { PurchaseModule } from './pages/purchase/purchase.module';
 import { SearchModule } from './pages/search/search.module';
+import { CartResolver } from './resolvers/cart.resolver';
 import { ProductResolver } from './resolvers/product.resolver';
 
 registerLocaleData(localePt, 'pt');
@@ -36,6 +37,7 @@ registerLocaleData(localePt, 'pt');
     ],
     providers: [
         ProductResolver,
+        CartResolver,
         {
             provide: LOCALE_ID,
             useValue: 'pt'

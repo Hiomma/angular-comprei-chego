@@ -6,6 +6,18 @@ export const objCartsQuery = {
         }
     ],
     query: `
+    carts(where: {cd_User: {_eq: $cd_User}}) {
+        b_Removed
+        ds_Search
+        nr_Quantity
+        product {
+          cd_Product
+          ds_Image
+          nm_Product
+        }
+        cd_Product
+        cd_Cart
+      }
     `
 }
 

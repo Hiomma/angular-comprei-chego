@@ -4,7 +4,7 @@ export class Carts {
     nr_Quantity: number
     cd_Cart: number
     ds_Search: string
-    b_Removed: boolean
+    b_Removed: boolean = false
     dt_Created: string
 }
 

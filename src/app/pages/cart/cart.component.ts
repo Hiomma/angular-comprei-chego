@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Carts } from 'src/app/models/carts/carts.model';
 
 @Component({
     selector: 'app-cart',
@@ -8,8 +9,15 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-    constructor(private router: Router) { }
+    /** @description Cart's array */
+    objArrayCart: Carts[] = []
+
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute,
+    ) { }
 
     ngOnInit(): void {
+        this.objArrayCart = this.route.snapshot.data.objCart
     }
 }

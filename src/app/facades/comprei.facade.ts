@@ -27,7 +27,7 @@ export class CompreiFacade {
     Get_Sections_Products = () => this.sectionRepository.Get_Sections_Products()
 
 
-    Get_Carts = (cd_Cart: number) => this.cartRepository.Get_Carts(cd_Cart)
+    Get_Carts = (cd_User: number) => this.cartRepository.Get_Carts(cd_User)
     Set_Insert_Carts = (object: Carts) => this.cartRepository.Set_Insert_Carts(object)
     Set_Update_Carts = (object: Carts) => this.cartRepository.Set_Update_Carts(object)
     Set_Delete_Carts = (cd_Cart: number) => this.cartRepository.Set_Delete_Carts(cd_Cart)

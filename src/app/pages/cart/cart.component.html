@@ -15,7 +15,7 @@
 </div>
 
 <div class="div-products">
-    <div>
+    <div *ngFor="let cart of objArrayCart">
         <div class="div-company" fxLayout="row" fxLayoutAlign="center center">
             <div fxFlex="5" style="justify-content: center; display: flex;">
                 <cc-checkbox>
