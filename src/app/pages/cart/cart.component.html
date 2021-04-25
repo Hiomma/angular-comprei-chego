@@ -15,14 +15,14 @@
 </div>
 
 <div class="div-products">
-    <div *ngFor="let cart of objArrayCart">
+    <div *ngFor="let cart of objFormArrayCart.controls">
         <div class="div-company" fxLayout="row" fxLayoutAlign="center center">
             <div fxFlex="5" style="justify-content: center; display: flex;">
                 <cc-checkbox>
                 </cc-checkbox>
             </div>
 
-            <span fxFlex="95">Sipollati</span>
+            <span fxFlex="95">{{cart.get('product.user').value.nm_Seller_Name}}</span>
         </div>
 
         <div class="div-product" fxLayout="row" fxLayoutAlign="center center">
@@ -33,19 +33,23 @@
             </div>
 
             <div fxFlex="40" fxLayout="row" fxLayoutAlign="initial center">
-                <img src="assets/images/cart-1.png">
+                <img src="{{cart.get('product').value.ds_Image}}">
 
-                <span style="margin-left: 16px;">PC Gamer 8GB de RAM</span>
+                <span style="margin-left: 16px;">{{cart.get('product').value.nm_Product}}</span>
             </div>
 
-            <span fxFlex="13" style="text-align: center;">R$ 2.500,00</span>
+            <span fxFlex="13" style="text-align: center;">{{cart.get('product').value.vl_Product|
+                currency:'BRL':'symbol-narrow':'1.2-2'}}</span>
 
             <div fxFlex="19" style="justify-content: center; display: flex;">
-                <cc-quantity-selector>
+                <cc-quantity-selector [control]="$any(cart).get('nr_Quantity')"
+                    [nr_Limit]="cart.get('product').value.nr_Quantity">
                 </cc-quantity-selector>
             </div>
 
-            <span fxFlex="13" style="text-align: center;">R$ 2.500,00</span>
+            <span fxFlex="13" style="text-align: center;">{{cart.get('product').value.vl_Product *
+                cart.get('nr_Quantity').value |
+                currency:'BRL':'symbol-narrow':'1.2-2'}}</span>
 
             <div fxFlex="10" style="justify-content: center; display: flex;">
                 <cc-actions></cc-actions>
@@ -56,17 +60,18 @@
 </div>
 
 <div class="div-footer" fxLayout="row" fxLayoutAlign="center center">
-    <span class="span-selected" fxFlex="25">5 itens selecionados</span>
+    <span class="span-selected" fxFlex="25">{{objArraySelected.length}} itens selecionados</span>
 
     <div fxFlex="25">
         <cc-select ds_Label="Entregar em:"></cc-select>
     </div>
 
     <div fxFlex="25">
-        <span class="span-value">R$ 55.500,00</span>
+        <span class="span-value">{{vl_Total |
+            currency:'BRL':'symbol-narrow':'1.2-2'}}</span>
     </div>
 
     <div fxFlex="25">
-        <button class="button-buy">Comprar</button>
+        <button class="button-buy" [disabled]="objArraySelected.length > 0">Comprar</button>
     </div>
 </div>

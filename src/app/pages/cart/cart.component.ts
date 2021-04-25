@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartsForm } from 'src/app/forms/carts/carts.form';
 import { Carts } from 'src/app/models/carts/carts.model';
 
 @Component({
@@ -10,14 +12,21 @@ import { Carts } from 'src/app/models/carts/carts.model';
 export class CartComponent implements OnInit {
 
     /** @description Cart's array */
-    objArrayCart: Carts[] = []
+    objFormArrayCart: FormArray = new FormArray([])
+
+    /** @description Selected's array */
+    objArraySelected: Carts[] = []
+
+    /** @description It guards the value of product's total */
+    vl_Total = 0
 
     constructor(
         private router: Router,
         private route: ActivatedRoute,
+        private cartsForm: CartsForm
     ) { }
 
     ngOnInit(): void {
-        this.objArrayCart = this.route.snapshot.data.objCart
+        this.cartsForm.Set_Value(this.objFormArrayCart, this.route.snapshot.data.objCart)
     }
 }

@@ -2,12 +2,13 @@ export const objProductsQuery = {
     header: [],
     query: `
     products {
+        cd_Product
+        ds_Detail
+        ds_Image
         nm_Product
         nr_Quantity
         nr_Sold
         vl_Product
-        cd_Product
-        ds_Image
       }
     `
 }

@@ -27,10 +27,10 @@ const routes: Routes = [
         resolve: { objCart: CartResolver }
     },
     {
-        path: "address", component: AddressComponent
+        path: "addresses", component: AddressComponent
     },
     {
-        path: "purchase", component: PurchaseComponent
+        path: "purchases", component: PurchaseComponent
     },
 ];
 

@@ -14,6 +14,6 @@
 </div>
 
 <div class="div-products">
-    <cc-product-card>
+    <cc-product-card (click)="Open_Product(product)" *ngFor="let product of objArrayProducts" [objProduct]="product">
     </cc-product-card>
 </div>

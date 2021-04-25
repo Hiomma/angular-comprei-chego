@@ -33,6 +33,7 @@ export class CompreiFacade {
     Set_Delete_Carts = (cd_Cart: number) => this.cartRepository.Set_Delete_Carts(cd_Cart)
 
     Get_Product = (cd_Product: number) => this.productRepository.Get_Product(cd_Product)
+    Get_Products = () => this.productRepository.Get_Products()
     Set_Insert_Products = (object: Products) => this.productRepository.Set_Insert_Products(object)
     Set_Update_Products = (object: Products) => this.productRepository.Set_Update_Products(object)
     Set_Delete_Products = (cd_Product: number) => this.productRepository.Set_Delete_Products(cd_Product)

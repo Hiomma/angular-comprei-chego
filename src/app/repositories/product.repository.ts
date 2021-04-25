@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Products } from '../models/products/products.model';
-import { objDeleteProducts, objInsertProducts, objProductQuery, objUpdateProducts } from '../queries/products.query';
+import { objDeleteProducts, objInsertProducts, objProductQuery, objProductsQuery, objUpdateProducts } from '../queries/products.query';
 import { ApiService } from '../services/api.service';
 import { Copy } from '../utils/utils';
 
@@ -17,6 +17,12 @@ export class ProductRepository {
         const response = await this.apiService.Get_Query([objProductQuery], { cd_Product })
 
         return response.products_by_pk
+    }
+
+    async Get_Products() {
+        const response = await this.apiService.Get_Query([objProductsQuery])
+
+        return response.products
     }
 
     async Set_Insert_Products(object: Products) {

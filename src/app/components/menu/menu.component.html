@@ -1,13 +1,8 @@
 <div class="div-menu">
     <h3>Meu Perfil</h3>
 
-    <div fxLayout="row" fxLayoutGap="8px">
-        <img style="height: 16px;" src="assets/icons/home.svg">
-        <p>Início</p>
-    </div>
-
-    <div fxLayout="row" fxLayoutGap="8px">
-        <img style="height: 16px;" src="assets/icons/basket.svg">
-        <p>Compras</p>
+    <div fxLayout="row" fxLayoutGap="8px" *ngFor="let menu of objArrayMenu" [routerLink]="menu.ds_Link">
+        <img style="height: 16px;" [src]="menu.ds_Image">
+        <p>{{menu.ds_Label}}</p>
     </div>
 </div>

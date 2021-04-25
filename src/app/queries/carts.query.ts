@@ -14,6 +14,12 @@ export const objCartsQuery = {
           cd_Product
           ds_Image
           nm_Product
+          vl_Product
+          nr_Quantity
+          user{
+              cd_User
+              nm_Seller_Name
+          }
         }
         cd_Product
         cd_Cart

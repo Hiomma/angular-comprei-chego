@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'cc-quantity-selector',
@@ -7,11 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class QuantitySelectorComponent implements OnInit {
 
-    /** @description Quantity Number */
-    nr_Quantity = 1
+    /** @description Controller of Quantity Number */
+    @Input() control = new FormControl()
 
     /** @description Quantity Limit */
-    @Input() nr_Limit = 10;
+    @Input() nr_Limit = 1;
 
     constructor() { }
 
@@ -19,14 +20,14 @@ export class QuantitySelectorComponent implements OnInit {
     }
 
     Decrease_Quantity() {
-        if (this.nr_Quantity > 1) {
-            this.nr_Quantity--
+        if (this.control.value > 1) {
+            this.control.setValue(this.control.value - 1)
         }
     }
 
     Increase_Quantity() {
-        if (this.nr_Quantity < this.nr_Limit) {
-            this.nr_Quantity++
+        if (this.control.value < this.nr_Limit) {
+            this.control.setValue(this.control.value + 1)
         }
     }
 
