@@ -1,0 +1,38 @@
+<app-bar></app-bar>
+
+<div class="div-header" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="20" class="div-product">
+        Produtos
+    </div>
+
+    <div fxFlex="60">
+
+    </div>
+
+    <div fxFlex="20" fxLayout="row">
+        Filtrar
+    </div>
+</div>
+
+
+<div class="div-form">
+    <div *ngFor="let product of objArrayProducts" fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex="40" fxLayout="row" fxLayoutAlign="initial center">
+            <img src="{{product.ds_Image}}">
+
+            <span class="span-name">{{product.nm_Product}}</span>
+        </div>
+
+        <div fxFlex="20" style="justify-content: center; display: flex;">
+            Quantidade: {{product.nr_Quantity}}
+        </div>
+
+        <span fxFlex="20" class="span-value" style="text-align: center;">{{product.vl_Product|
+            currency:'BRL':'symbol-narrow':'1.2-2'}}</span>
+
+
+        <div fxFlex="10" style="justify-content: center; display: flex;">
+            <cc-actions></cc-actions>
+        </div>
+    </div>
+</div>

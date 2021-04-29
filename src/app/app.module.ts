@@ -11,6 +11,7 @@ import { AddressModule } from './pages/address/address.module';
 import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
 import { ProductModule } from './pages/product/product.module';
+import { ProductsModule } from './pages/products/products.module';
 import { PurchaseModule } from './pages/purchase/purchase.module';
 import { SearchModule } from './pages/search/search.module';
 import { CartResolver } from './resolvers/cart.resolver';
@@ -33,7 +34,8 @@ registerLocaleData(localePt, 'pt');
         PurchaseModule,
         BrowserAnimationsModule,
         GraphQLModule,
-        HttpClientModule
+        HttpClientModule,
+        ProductsModule
     ],
     providers: [
         ProductResolver,

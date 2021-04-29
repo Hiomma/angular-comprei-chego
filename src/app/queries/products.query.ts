@@ -13,6 +13,26 @@ export const objProductsQuery = {
     `
 }
 
+export const objProductsByUserQuery = {
+    header: [
+        {
+            field: "$cd_User",
+            type: "Int!"
+        }
+    ],
+    query: `
+    products(where: {cd_User: {_eq: $cd_User}}) {
+        cd_Product
+        ds_Detail
+        ds_Image
+        nm_Product
+        nr_Quantity
+        nr_Sold
+        vl_Product
+      }
+    `
+}
+
 export const objProductQuery = {
     header: [{
         field: "$cd_Product",

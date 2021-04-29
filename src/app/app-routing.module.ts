@@ -4,6 +4,7 @@ import { AddressComponent } from './pages/address/address.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
+import { ProductsComponent } from './pages/products/products.component';
 import { PurchaseComponent } from './pages/purchase/purchase.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CartResolver } from './resolvers/cart.resolver';
@@ -25,6 +26,10 @@ const routes: Routes = [
         path: "cart",
         component: CartComponent,
         resolve: { objCart: CartResolver }
+    },
+    {
+        path: "products",
+        component: ProductsComponent,
     },
     {
         path: "addresses", component: AddressComponent
