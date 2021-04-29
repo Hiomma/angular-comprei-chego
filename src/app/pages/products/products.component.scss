@@ -1,4 +1,14 @@
 .div-header {
+    background: white;
+    width: 1140px;
+    margin: 0 auto;
+    margin-top: 16px;
+    border-radius: 25px;
+
+    .div-body {
+        padding: 16px;
+    }
+
     .div-product {
         font-weight: bold;
         font-size: 20px;
@@ -8,10 +18,13 @@
 .div-form {
     background: white;
     border-radius: 5px;
-    padding: 16px;
     width: 1140px;
     margin: 0 auto;
     margin-top: 16px;
+
+    .div-body {
+        padding: 16px;
+    }
 
     .span-name {
         margin-left: 16px;
