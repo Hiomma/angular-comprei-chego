@@ -2,18 +2,20 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppBarModule } from 'src/app/components/app-bar/app-bar.module';
-import { ProductCardModule } from 'src/app/components/product-card/product-card.module';
-import { SearchComponent } from './search.component';
+import { InputModule } from 'src/app/components/input/input.module';
+import { LoginComponent } from './login.component';
+
+
 
 @NgModule({
     declarations: [
-        SearchComponent
+        LoginComponent
     ],
     imports: [
         CommonModule,
         AppBarModule,
         FlexLayoutModule,
-        ProductCardModule,
+        InputModule,
     ]
 })
-export class SearchModule { }
+export class LoginModule { }

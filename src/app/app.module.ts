@@ -10,6 +10,7 @@ import { GraphQLModule } from './graphql.module';
 import { AddressModule } from './pages/address/address.module';
 import { CartModule } from './pages/cart/cart.module';
 import { HomeModule } from './pages/home/home.module';
+import { LoginModule } from './pages/login/login.module';
 import { ProductModule } from './pages/product/product.module';
 import { ProductsModule } from './pages/products/products.module';
 import { PurchaseModule } from './pages/purchase/purchase.module';
@@ -35,7 +36,8 @@ registerLocaleData(localePt, 'pt');
         BrowserAnimationsModule,
         GraphQLModule,
         HttpClientModule,
-        ProductsModule
+        ProductsModule,
+        LoginModule,
     ],
     providers: [
         ProductResolver,
